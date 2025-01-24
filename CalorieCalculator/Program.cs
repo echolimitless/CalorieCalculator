@@ -19,8 +19,7 @@
             };
 
             var calorieCalculation = new CalorieCalculation();
-            var calories = calorieCalculation.Execute(rice);
-            calories += calorieCalculation.Execute(natto);
+            var calories = calorieCalculation.Execute(rice) + calorieCalculation.Execute(natto);
             Console.WriteLine(calories);
         }
     }
