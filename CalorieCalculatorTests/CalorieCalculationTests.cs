@@ -33,8 +33,8 @@ namespace CalorieCalculatorTests
         /// <summary>
         /// CorrectCaloriesのテストデータ
         /// </summary>
-        public static TheoryData<double, double, double, double> CorrectCaloriesData =>
-            new TheoryData<double, double, double, double>
+        public static TheoryData<double, double, double, long> CorrectCaloriesData =>
+            new TheoryData<double, double, double, long>
             {
                 /// 通常ケース
                 { 2.5, 0.3, 37.1, 161 },

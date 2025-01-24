@@ -2,6 +2,6 @@
 {
     public interface ICalorieCalculation
     {
-        double Execute(AmountOfIntake amountOfIntake);
+        long Execute(AmountOfIntake amountOfIntake);
     }
 }

@@ -7,13 +7,13 @@
         private const int FatCaloriesPerGram = 9;
         private const int CarbohydrateCaloriesPerGram = 4;
 
-        public double Execute(AmountOfIntake amountOfIntake)
+        public long Execute(AmountOfIntake amountOfIntake)
         {
             var protein = Math.Round(amountOfIntake.Protein, 1);
             var fat = Math.Round(amountOfIntake.Fat, 1);
             var carbohydrate = Math.Round(amountOfIntake.Carbohydrate, 1);
 
-            return Math.Round(
+            return (long)Math.Round(
                 (protein * ProteinCaloriesPerGram) +
                 (fat * FatCaloriesPerGram) +
                 (carbohydrate * CarbohydrateCaloriesPerGram), 0);
