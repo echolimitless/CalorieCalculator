@@ -4,24 +4,33 @@
     {
         static void Main(string[] args)
         {
+            // 問題２の計算データ
             var rice = new AmountOfIntake
             {
-                Protein = 2.5,
-                Fat = 0.3,
-                Carbohydrate = 37.1
+                Protein = 2.5M,
+                Fat = 0.3M,
+                Carbohydrate = 37.1M
             };
 
             var natto = new AmountOfIntake
             {
-                Protein = 16.5,
-                Fat = 10.0,
-                Carbohydrate = 12.1
+                Protein = 16.5M,
+                Fat = 10.0M,
+                Carbohydrate = 12.1M
             };
 
-            var calorieCalculation = new CalorieCalculation();
-            var calories = calorieCalculation.Execute(rice);
-            calories += calorieCalculation.Execute(natto);
-            Console.WriteLine(calories);
+            var calculateProteinCalories = new CalculateProteinCalories();
+            var caluculateFatCalories = new CalculateFatCalories();
+            var calculateCarbohydrateCalories = new CalculateCarbohydrateCalories();
+
+            var calories = calculateProteinCalories.Execute(rice.Protein) +
+                                caluculateFatCalories.Execute(rice.Fat) +
+                                calculateCarbohydrateCalories.Execute(rice.Carbohydrate) +
+                                calculateProteinCalories.Execute(natto.Protein) +
+                                caluculateFatCalories.Execute(natto.Fat) +
+                                calculateCarbohydrateCalories.Execute(natto.Carbohydrate);
+
+            Console.WriteLine($"""納豆ご飯の総カロリー：{calories:N0}（kcal）""");
         }
     }
 }
