@@ -2,6 +2,6 @@
 {
     public interface ICalculateFatCalories
     {
-        long Execute(double fatIntake);
+        long Execute(decimal fatIntake);
     }
 }

@@ -15,7 +15,7 @@
         /// </summary>
         /// <param name="proteinIntake">タンパク質の摂取量</param>
         /// <returns>タンパク質の摂取量から計算したカロリー</returns>
-        public long Execute(double proteinIntake)
+        public long Execute(decimal proteinIntake)
         {
             var protein = Math.Round(proteinIntake, 1, MidpointRounding.AwayFromZero);
 

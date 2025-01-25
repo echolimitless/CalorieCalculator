@@ -15,7 +15,7 @@
         /// </summary>
         /// <param name="carbohydrateIntake">炭水化物の摂取量</param>
         /// <returns>炭水化物の摂取量から計算したカロリー</returns>
-        public long Execute(double carbohydrateIntake)
+        public long Execute(decimal carbohydrateIntake)
         {
             var carbohydrate = Math.Round(carbohydrateIntake, 1, MidpointRounding.AwayFromZero);
 

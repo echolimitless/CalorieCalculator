@@ -2,6 +2,6 @@
 {
     public interface ICalculateProteinCalories
     {
-        long Execute(double proteinIntake);
+        long Execute(decimal proteinIntake);
     }
 }
