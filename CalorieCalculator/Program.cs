@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+            // 問題２の計算データ
             var rice = new AmountOfIntake
             {
                 Protein = 2.5M,
