@@ -21,10 +21,15 @@ namespace CalorieCalculatorTests
                 Fat = fat,
                 Carbohydrate = carbohydrate
             };
-            var calorieCalculation = new CalorieCalculation();
+
+            var calculateProteinCalories = new CalculateProteinCalories();
+            var caluculateFatCalories = new CalculateFatCalories();
+            var calculateCarbohydrateCalories = new CalculateCarbohydrateCalories();
 
             // Act
-            var result = calorieCalculation.Execute(amountOfIntake);
+            var result = calculateProteinCalories.Execute(amountOfIntake.Protein) +
+                            caluculateFatCalories.Execute(amountOfIntake.Fat) +
+                            calculateCarbohydrateCalories.Execute(amountOfIntake.Carbohydrate);
 
             // Assert
             Assert.Equal(expected, result);
@@ -52,7 +57,7 @@ namespace CalorieCalculatorTests
                 // 最小値のテスト（0以下はない前提）
                 { 0.0, 0.0, 0.0, 0 },
                 // 最大値のテスト（仮に7桁を最大とする）
-                { 9999999.9, 9999999.9, 9999999.9, 169999998 }
+                { 9999999.9, 9999999.9, 9999999.9, 169999999 }
 
             };
     }

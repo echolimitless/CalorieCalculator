@@ -18,9 +18,18 @@
                 Carbohydrate = 12.1
             };
 
-            var calorieCalculation = new CalorieCalculation();
-            var calories = calorieCalculation.Execute(rice) + calorieCalculation.Execute(natto);
-            Console.WriteLine(calories);
+            var calculateProteinCalories = new CalculateProteinCalories();
+            var caluculateFatCalories = new CalculateFatCalories();
+            var calculateCarbohydrateCalories = new CalculateCarbohydrateCalories();
+
+            var calories = calculateProteinCalories.Execute(rice.Protein) +
+                            caluculateFatCalories.Execute(rice.Fat) +
+                            calculateCarbohydrateCalories.Execute(rice.Carbohydrate) +
+                            calculateProteinCalories.Execute(natto.Protein) +
+                            caluculateFatCalories.Execute(natto.Fat) +
+                            calculateCarbohydrateCalories.Execute(natto.Carbohydrate);
+
+            Console.WriteLine($"""納豆ご飯の総カロリー：{calories:N0}（kcal）""");
         }
     }
 }
