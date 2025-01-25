@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+
             // 問題２の計算データ
             var rice = new AmountOfIntake
             {
@@ -19,16 +20,15 @@
                 Carbohydrate = 12.1M
             };
 
-            var calculateProteinCalories = new CalculateProteinCalories();
-            var caluculateFatCalories = new CalculateFatCalories();
-            var calculateCarbohydrateCalories = new CalculateCarbohydrateCalories();
+            var foodList = new FoodList
+            {
+                Name = "納豆ご飯",
+                AmountOfIntakeList = [rice, natto]
+            };
 
-            var calories = calculateProteinCalories.Execute(rice.Protein) +
-                                caluculateFatCalories.Execute(rice.Fat) +
-                                calculateCarbohydrateCalories.Execute(rice.Carbohydrate) +
-                                calculateProteinCalories.Execute(natto.Protein) +
-                                caluculateFatCalories.Execute(natto.Fat) +
-                                calculateCarbohydrateCalories.Execute(natto.Carbohydrate);
+            var caluculateforfoodlist = new CalculateForFoodList();
+
+            var calories = caluculateforfoodlist.Execute(foodList);
 
             Console.WriteLine($"""納豆ご飯の総カロリー：{calories:N0}（kcal）""");
         }
