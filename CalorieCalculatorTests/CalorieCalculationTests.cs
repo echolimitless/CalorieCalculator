@@ -8,7 +8,7 @@ namespace CalorieCalculatorTests
     public class CalorieCalculationTests
     {
         /// <summary>
-        /// カロリー計算が正しいく行えているか
+        /// カロリー計算が正しく行えているか
         /// </summary>
         [Theory]
         [MemberData(nameof(CorrectCaloriesData))]
